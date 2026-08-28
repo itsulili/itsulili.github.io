@@ -819,6 +819,34 @@ footer{
     scroll-behavior:auto !important;
   }
 }
+  .education-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.university-logo{
+  width:110px !important;
+  height:auto !important;
+  object-fit:contain;
+  flex-shrink:0;
+  padding:7px;
+  border:1px solid rgba(243,166,200,.45);
+  border-radius:12px;
+  filter:drop-shadow(0 0 8px rgba(243,166,200,.35));
+  animation:universityFloat 3s ease-in-out infinite;
+}
+
+@keyframes universityFloat{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+@media(max-width:600px){
+  .university-logo{
+    width:90px !important;
+  }
+}
 </style>
 </head>
 
