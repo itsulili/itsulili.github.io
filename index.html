@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lujain Althobaiti | Portfolio</title>
+
+<style>
+:root{
+  --bg:#080a0f;
+  --card:#10131a;
+  --pink:#f3a6c8;
+  --pink2:#ffd0e1;
+  --text:#f7f7fa;
+  --muted:#aaaab5;
+  --line:rgba(243,166,200,.25);
+}
+
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:
+    radial-gradient(circle at 80% 10%,rgba(243,166,200,.08),transparent 25%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:rgba(8,10,15,.9);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #1c2029;
+}
+
+.logo{
+  font-size:21px;
+  font-weight:800;
+}
+
+.logo span{
+  color:var(--pink);
+}
+
+nav .links{
+  display:flex;
+  gap:25px;
+  font-size:13px;
+}
+
+nav .links a:hover{
+  color:var(--pink);
+}
+
+main{
+  max-width:1150px;
+  margin:auto;
+  padding:0 24px 70px;
+}
+
+.hero{
+  min-height:620px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.small{
+  color:var(--pink2);
+  font-size:19px;
+}
+
+h1{
+  font-size:clamp(45px,7vw,76px);
+  line-height:1.05;
+  margin:8px 0;
+  color:var(--pink);
+}
+
+.hero h2{
+  margin:18px 0 10px;
+  font-size:27px;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:540px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+
+.btn{
+  padding:12px 22px;
+  border:1px solid var(--pink);
+  border-radius:10px;
+  font-weight:600;
+}
+
+.btn.primary{
+  background:var(--pink);
+  color:#171018;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.code{
+  position:relative;
+  padding:26px;
+  border:1px solid rgba(243,166,200,.6);
+  border-radius:20px;
+  background:linear-gradient(145deg,#11141b,#0b0d12);
+  box-shadow:0 0 60px rgba(243,166,200,.08);
+  overflow:hidden;
+}
+
+.dots{
+  color:var(--pink);
+  letter-spacing:6px;
+  margin-bottom:20px;
+}
+
+pre{
+  white-space:pre-wrap;
+  color:#e7e7eb;
+  font-family:monospace;
+  line-height:1.9;
+}
+
+.codePink{
+  color:var(--pink);
+}
+
+.sparkle{
+  position:absolute;
+  color:var(--pink);
+  opacity:.7;
+}
+
+.s1{top:14%;left:5%}
+.s2{top:25%;right:3%}
+.s3{top:52%;left:48%}
+.s4{top:73%;right:8%}
+
+.section{
+  margin-top:25px;
+}
+
+.section-title{
+  color:var(--pink);
+  font-size:25px;
+  margin-bottom:18px;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.card{
+  background:linear-gradient(145deg,#11141a,#0d1016);
+  border:1px solid #242833;
+  border-radius:17px;
+  padding:26px;
+}
+
+.card p{
+  color:var(--muted);
+}
+
+.traits{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.trait{
+  padding:15px;
+  border-bottom:1px solid #232731;
+}
+
+.trait strong{
+  display:block;
+  color:#fff;
+}
+
+.trait span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tag{
+  padding:7px 15px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  color:#dddde4;
+  font-size:14px;
+}
+
+.learning{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  text-align:center;
+  gap:10px;
+  margin-top:15px;
+}
+
+.learning div{
+  padding:16px 5px;
+}
+
+.learning .icon{
+  color:var(--pink);
+  font-size:25px;
+}
+
+.project{
+  border:1px solid var(--line);
+  padding:22px;
+  border-radius:14px;
+  margin-top:12px;
+}
+
+.project h3{
+  font-size:22px;
+  margin:0;
+}
+
+.project-link{
+  display:inline-block;
+  margin-top:15px;
+  color:var(--pink);
+  font-weight:700;
+}
+
+.item{
+  padding:15px 0;
+  border-bottom:1px solid #242833;
+}
+
+.item:last-child{
+  border-bottom:0;
+}
+
+.item strong{
+  display:block;
+}
+
+.item span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.connect{
+  text-align:center;
+  margin-top:35px;
+  padding:40px 20px;
+}
+
+.connect h2{
+  color:var(--pink);
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+
+.socials a{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 18px;
+}
+
+.socials a:hover{
+  border-color:var(--pink);
+  color:var(--pink);
+}
+
+footer{
+  text-align:center;
+  color:#777b86;
+  border-top:1px solid #1d2028;
+  padding:20px;
+  font-size:13px;
+}
+
+@media(max-width:800px){
+  nav .links{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding:80px 0 40px;
+  }
+
+  .grid2{
+    grid-template-columns:1fr;
+  }
+
+  .learning{
+    grid-template-columns:1fr 1fr;
+  }
+
+  h1{
+    font-size:48px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo"><span>&lt;/&gt;</span> itsulili</div>
+
+  <div class="links">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#certifications">CERTIFICATIONS</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero" id="home">
+
+  <span class="sparkle s1">✦</span>
+  <span class="sparkle s2">✧</span>
+  <span class="sparkle s3">✦</span>
+  <span class="sparkle s4">✧</span>
+
+  <div>
+    <div class="small">Hi, I'm ✧</div>
+
+    <h1>Lujain Althobaiti</h1>
+
+    <h2>Computer Science Student <span style="color:var(--pink)">|</span></h2>
+
+    <p>
+      Passionate about AI, Data Science, Software Development
+      and emerging technologies. Building my skills through
+      continuous learning and practical projects.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#projects">View My Work →</a>
+
+      <a class="btn"
+         href="https://github.com/itsulili"
+         target="_blank">
+         GitHub ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="code">
+    <div class="dots">● ● ●</div>
+
+<pre>
+<span class="codePink">class</span> Developer {
+
+  passion = "building solutions";
+  goal = "make impact";
+
+  skills = [
+    "Code",
+    "Learn",
+    "Repeat"
+  ];
+
+  <span class="codePink">while</span> (dreams == reality) {
+      keepCoding();
+      keepGrowing();
+  }
+
+  <span class="codePink">return</span> success;
+}
+</pre>
+  </div>
+
+</section>
+
+
+<section class="section grid2" id="about">
+
+  <div class="card">
+    <h2 class="section-title">♙ About Me</h2>
+
+    <p>
+      I'm a Computer Science student at Taif University with
+      a strong interest in Artificial Intelligence, Data Science
+      and Software Development.
+    </p>
+
+    <p>
+      I enjoy exploring new technologies, building meaningful
+      projects and continuously improving my skills.
+    </p>
+
+    <p>
+      I believe in consistency, curiosity and creating value.
+    </p>
+  </div>
+
+  <div class="card traits">
+
+    <div class="trait">
+      <strong>🎓 CS Student</strong>
+      <span>Always learning</span>
+    </div>
+
+    <div class="trait">
+      <strong>⌨ Problem Solver</strong>
+      <span>Love challenges</span>
+    </div>
+
+    <div class="trait">
+      <strong>🚀 Self-Motivated</strong>
+      <span>Keep pushing forward</span>
+    </div>
+
+    <div class="trait">
+      <strong>✦ Detail Oriented</strong>
+      <span>Care about quality</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section grid2" id="skills">
+
+  <div class="card">
+    <h2 class="section-title">&lt;/&gt; Skills & Technologies</h2>
+
+    <div class="tags">
+      <span class="tag">C++</span>
+      <span class="tag">Python</span>
+      <span class="tag">Java</span>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">Git & GitHub</span>
+      <span class="tag">MATLAB</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Data Analysis</span>
+      <span class="tag">Data Visualization</span>
+      <span class="tag">Artificial Intelligence</span>
+      <span class="tag">Problem Solving</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="section-title">▣ Currently Learning</h2>
+
+    <div class="learning">
+      <div><div class="icon">⌘</div>Java</div>
+      <div><div class="icon">◉</div>Machine<br>Learning</div>
+      <div><div class="icon">✦</div>Data<br>Science</div>
+      <div><div class="icon">☁</div>Software<br>Development</div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section grid2">
+
+  <div class="card" id="projects">
+    <h2 class="section-title">🚀 Featured Project</h2>
+
+    <div class="project">
+      <h3>Kanz AI Hackathon 2026</h3>
+
+      <p>
+        Participated in the Kanz AI Training Hackathon and
+        developed an AI-powered project as part of the
+        hackathon experience.
+      </p>
+
+      <a class="project-link"
+         href="https://try.ka.nz/ai/46"
+         target="_blank">
+         View My Project →
+      </a>
+    </div>
+  </div>
+
+
+  <div class="card" id="certifications">
+    <h2 class="section-title">✦ Certifications & Training</h2>
+
+    <div class="item">
+      <strong>Fundamentals of Artificial Intelligence</strong>
+      <span>SDAIA · 2025</span>
+    </div>
+
+    <div class="item">
+      <strong>EYOUTH Learning Plan</strong>
+      <span>IBM SkillsBuild · 2026</span>
+    </div>
+
+    <div class="item">
+      <strong>AI Horizons Initiative</strong>
+      <span>eYouth × IBM SkillsBuild · 2026</span>
+    </div>
+
+    <div class="item">
+      <strong>Kanz AI Training Hackathon</strong>
+      <span>Kanz AI · 2026</span>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="section grid2">
+
+  <div class="card">
+    <h2 class="section-title">▣ Workshops & Activities</h2>
+
+    <div class="item">
+      <strong>How Does AI Understand Our Language?</strong>
+      <span>Introduction to NLP · AI Pioneers · 2026</span>
+    </div>
+
+    <div class="item">
+      <strong>AI-Enhanced Media Production</strong>
+      <span>AI Pioneers · 2026</span>
+    </div>
+
+    <div class="item">
+      <strong>Professional Week</strong>
+      <span>College of Computers and Information Technology · Taif University · 2026</span>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h2 class="section-title">♙ University Involvement</h2>
+
+    <div class="item">
+      <strong>IEEE — Taif University Student Branch</strong>
+      <span>Digital Content Committee Member</span>
+    </div>
+
+    <p>
+      Contributing to digital content and supporting the
+      branch's activities and initiatives.
+    </p>
+  </div>
+
+</section>
+
+
+<section class="connect" id="contact">
+
+  <h2>Let's Connect ✧</h2>
+
+  <p style="color:var(--muted)">
+    Always learning · building · growing
+  </p>
+
+  <div class="socials">
+
+    <a href="https://github.com/itsulili" target="_blank">
+      GitHub
+    </a>
+
+    <a href="https://www.linkedin.com/in/lujain-althobaiti-328a2440a"
+       target="_blank">
+      LinkedIn
+    </a>
+
+    <a href="https://x.com/itsulilii"
+       target="_blank">
+      X
+    </a>
+
+    <a href="mailto:lugainalthobaiti@gmail.com">
+      Email
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Lujain Althobaiti · Learning · Building · Growing ♡
+</footer>
+
+</body>
+</html>
